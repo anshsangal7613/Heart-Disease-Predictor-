@@ -10,14 +10,14 @@ expected_columns = joblib.load('columns.pkl')
 st.title('Heart Disease Prediction')
 
 age = st.slider('Age', 18, 100, 40)
-sex = st.selectbox('SEX', ['M', 'F'])
+sex = st.selectbox('SEX', ['MALE', 'FEMALE'])
 chest_pain = st.selectbox('Chest Pain Type', ['ATA', 'NAP', 'TA', 'ASY'])
 resting_bp = st.number_input('Resting Blood Pressure (mm Hg)', 80, 200, 120)
 cholesterol = st.number_input('Cholesterol (mg/dL)', 100, 600, 200)
-fasting_bs = st.selectbox('Fasting Blood Sugar > 120 mg/dL', [0, 1])
+fasting_bs = st.selectbox('Fasting Blood Sugar > 120 mg/dL', ['NO', 'YES'])
 resting_ecg = st.selectbox('Resting ECG', ['Normal', 'ST', 'LVH'])
 max_hr = st.slider('Max Heart Rate', 60, 220, 150)
-exercise_angina = st.selectbox('Exercise-Induced Angina', ['Y', 'N'])
+exercise_angina = st.selectbox('Exercise-Induced Angina', ['YES', 'NO'])
 oldpeak = st.slider('Oldpeak (ST Depression)', 0.0, 6.0, 1.0)
 st_slope = st.selectbox('ST Slope', ['Up', 'Flat', 'Down'])
 
@@ -50,4 +50,4 @@ if st.button('Predict'):
   if prediction == 1:
     st.error('⚠️ HIGH RISK OF HEART DISEASE!!')
   else:
-    st.success('🟢 LOW RISK OF HEART DISEASE!!')
+    st.success('🟢 LOW RISK OF HEART DISEASE!! BUT STILL EAT HEALTHY😊')
